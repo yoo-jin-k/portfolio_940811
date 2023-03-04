@@ -149,8 +149,6 @@ const Project = () => {
 
                 </div>
                 <ModalLayout visible={project1} onOk={handleOk} onCancel={handleCancel}>
-                    {/*<AboutInfo/>*/}
-                    1111111
                     <PetnerInfo/>
                     {/*<ProjectModalLayout/>*/}
                 </ModalLayout>

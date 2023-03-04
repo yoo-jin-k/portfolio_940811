@@ -1,7 +1,27 @@
-import { Row, Col, Typography } from 'antd';
+import { Row, Col, Typography,Collapse, theme } from 'antd';
+import { CaretRightOutlined } from '@ant-design/icons';
 // import petner_video from '/assets/videos/petner_video.mp4';
+import petner_main from '../../../assets/petner_main.png';
+import petner_erd from '../../../assets/petner_erd.png';
 const { Title, Text } = Typography;
+const { Panel } = Collapse;
+
+const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
+
+
+
 const PetnerInfo = () => {
+    const { token } = theme.useToken();
+    const panelStyle = {
+        marginBottom: 24,
+        background: '#555555',
+        borderRadius: token.borderRadiusLG,
+        border: 'none',
+    };
     return (
         <>
             <Row>
@@ -16,10 +36,7 @@ const PetnerInfo = () => {
                             </Text>
                         </Col>
                         <Col span={24}>
-                            메인페이지 이미지
-                            <video>
-                                {/*<source src={petner_video} type={'video/mp4'} />*/}
-                            </video>
+                            <img src={petner_main} alt={'petner_main img'} width={'100%'}/>
                         </Col>
                         <Col span={24}>
                             <Title level={3}>프로젝트 소개</Title>
@@ -32,6 +49,27 @@ const PetnerInfo = () => {
                             </Text>
                         </Col>
                         {/**/}
+                        <Col span={24}>
+
+                            <Collapse
+                                bordered={false}
+                                defaultActiveKey={['1']}
+                                expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
+                                style={{ background: '#353535' }}
+                            >
+                                <Panel header="This is panel header 1" key="1" style={panelStyle}>
+                                    <p>{text}</p>
+                                </Panel>
+                                <Panel header="This is panel header 2" key="2" style={panelStyle}>
+                                    <p>{text}</p>
+                                </Panel>
+                                <Panel header="This is panel header 3" key="3" style={panelStyle}>
+                                    <p>{text}</p>
+                                </Panel>
+                            </Collapse>
+
+
+                        </Col>
                         <Col span={24}>
                             <Title>프로젝트 목적</Title>
                             <Text>반려동물 가구 증가 - 펫시터 수요 증가</Text>
@@ -61,7 +99,7 @@ const PetnerInfo = () => {
                         </Col>
                         <Col span={24}>
                             <Title>ERD</Title>
-                            img
+                            <img src={petner_erd} alt={petner_erd} width={'100%'}/>
                         </Col>
                         <Col span={24}>
                             <Title>주요기능 소개</Title>
