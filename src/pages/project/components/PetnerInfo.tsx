@@ -62,11 +62,8 @@ const PetnerInfo = () => {
                                 <Panel header="프로젝트 목적" key="1" style={panelStyle}>
                                     <p>{text}</p>
                                     <Row>
-                                        <Col span={12}>
+                                        <Col span={24}>
                                             <img src={img1} alt={'img1'} width={'100%'}/>
-                                        </Col>
-                                        <Col span={12}>
-                                            <img src={img2} alt={'img2'} width={'100%'}/>
                                         </Col>
                                         <Col span={24}>
                                             <Text>
