@@ -3,6 +3,8 @@ import { CaretRightOutlined } from '@ant-design/icons';
 // import petner_video from '/assets/videos/petner_video.mp4';
 import petner_main from '../../../assets/petner_main.png';
 import petner_erd from '../../../assets/petner_erd.png';
+import img1 from '../../../assets/petner/info_1.png';
+import img2 from '../../../assets/petner/info_2.png';
 const { Title, Text } = Typography;
 const { Panel } = Collapse;
 
@@ -57,13 +59,35 @@ const PetnerInfo = () => {
                                 expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
                                 style={{ background: '#353535' }}
                             >
-                                <Panel header="This is panel header 1" key="1" style={panelStyle}>
+                                <Panel header="프로젝트 목적" key="1" style={panelStyle}>
+                                    <p>{text}</p>
+                                    <Row>
+                                        <Col span={12}>
+                                            <img src={img1} alt={'img1'} width={'100%'}/>
+                                        </Col>
+                                        <Col span={12}>
+                                            <img src={img2} alt={'img2'} width={'100%'}/>
+                                        </Col>
+                                        <Col span={24}>
+                                            <Text>
+                                                반려동물 가구 증가 - 펫시터 수요 증가<br/>
+                                                저희 사이트는 펫시팅 전문업체보다는 가벼운<br/>
+                                                Casual 한 서비스로<br/>
+                                                사용자 위치를 기반 그리고 주변의 펫시터 혹은<br/>
+                                                반려동물 서비스현황을 제공하여<br/>
+                                                주변의 이웃이나 반려동물 보호자도 직접 <br/>
+                                                펫시팅에 참여 할수 있도록 돕는 서비스 입니다.
+                                            </Text>
+                                        </Col>
+                                    </Row>
+                                </Panel>
+                                <Panel header="서비스 대상" key="2" style={panelStyle}>
                                     <p>{text}</p>
                                 </Panel>
-                                <Panel header="This is panel header 2" key="2" style={panelStyle}>
+                                <Panel header="ERD" key="3" style={panelStyle}>
                                     <p>{text}</p>
                                 </Panel>
-                                <Panel header="This is panel header 3" key="3" style={panelStyle}>
+                                <Panel header="주요기능 소개" key="4" style={panelStyle}>
                                     <p>{text}</p>
                                 </Panel>
                             </Collapse>
